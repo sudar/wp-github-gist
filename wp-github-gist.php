@@ -4,7 +4,7 @@ Plugin Name: WP Github Gist
 Plugin URI: http://sudarmuthu.com/wordpress/wp-github-gist
 Description: Embed files and gist from Github in your blog posts or pages.
 Author: Sudar
-Version: 0.1
+Version: 0.2
 Donate Link: http://sudarmuthu.com/if-you-wanna-thank-me
 License: GPL
 Author URI: http://sudarmuthu.com/
@@ -12,6 +12,8 @@ Text Domain: wp-github-gist
 
 === RELEASE NOTES ===
 2011-08-23 - v0.1 - Initial Release
+2012-05-02 - v0.2 - (Dev time: 0.5 hours)
+                  - Fixed issue in embedding Github files
 
 Based on Github Gist Plugin http://wordpress.org/extend/plugins/github-gist by Jingwen Owen Ou
 */
@@ -112,12 +114,10 @@ class WPGithubGist {
     private function get_github_embed_script($file, $start_line = 0, $end_line = 0) {
         $script = '<script src = "' . self::GIST_IT_SERVER . $file;
 
-        if ($start_line > 0) {
-            $script .= ":$start_line";
-        }
-
-        if ($end_line > 0) {
-            $script .= ":$end_line";
+        if ($start_line > 0 || $end_line > 0) {
+            $script .= "?slice=$start_line:$end_line&footer=minimal";
+        } else {
+            $script .= "?footer=minimal";
         }
 
         $script .= '"></script>';

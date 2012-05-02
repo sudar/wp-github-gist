@@ -3,8 +3,8 @@ Contributors: sudar
 Tags: github, gist, embed
 Requires at least: 2.8
 Donate Link: http://sudarmuthu.com/if-you-wanna-thank-me
-Tested up to: 3.2.1
-Stable tag: 0.1
+Tested up to: 3.2.2
+Stable tag: 0.2
 	
 Embed files and gist from Github in your blog posts or pages.
 
@@ -58,11 +58,12 @@ Support for the Plugin is available from the [Plugin's home page][1]. If you hav
 Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page.
 
 == Changelog ==
-### Changelog
 
-** v0.1 (2011-08-23)
-
+###v0.1 (2011-08-23)
 *   Initial Version
+
+###v0.2 (2012-05-02)
+*   Fixed issue in embedding Github files
 
 ==Readme Generator== 
 
