@@ -14,8 +14,9 @@ Text Domain: wp-github-gist
 2011-08-23 - v0.1 - Initial Release
 2012-05-02 - v0.2 - (Dev time: 0.5 hours)
                   - Fixed issue in embedding Github files
-2012-05-20 - v0.3 - (Dev time: 1 hour)
+2012-05-20 - v0.3 - (Dev time: 1.5 hours)
                   - Added the ability to choose gist-it server
+                  - Added information to the screen help tab                   
 
 Based on Github Gist Plugin http://wordpress.org/extend/plugins/github-gist by Jingwen Owen Ou
 Used the Gist-it script https://github.com/sudar/gist-it by Robert Krimen
@@ -52,6 +53,10 @@ class WPGithubGist {
     const GIST_IT_SERVER = "http://gist-it.sudarmuthu.com";
     const GITHUB = "/github";
 
+    // for help screens
+	private $admin_page;
+	private $admin_screen;
+
     /**
      * Initalize the plugin by registering the hooks
      */
@@ -77,8 +82,43 @@ class WPGithubGist {
      * Register the settings page
      */
     function register_settings_page() {
-        add_options_page( __('wp-github-gist', 'wp-github-gist'), __('wp-github-gist', 'wp-github-gist'), 'manage_options', self::MENU_SLUG, array(&$this, 'settings_page') );
+        //Save the handle to your admin page - you'll need it to create a WP_Screen object
+        $this->admin_page = add_options_page( __('wp-github-gist', 'wp-github-gist'), __('wp-github-gist', 'wp-github-gist'), 'manage_options', self::MENU_SLUG, array(&$this, 'settings_page') );
+
+		add_action("load-{$this->admin_page}",array(&$this,'create_help_panel'));
     }
+
+    /**
+     * Add Help Panel
+     */ 
+	function create_help_panel() {
+ 
+		/** 
+		 * Create the WP_Screen object against your admin page handle
+		 * This ensures we're working with the right admin page
+		 */
+		$this->admin_screen = WP_Screen::get($this->admin_page);
+ 
+		/**
+		 * Content specified inline
+		 */
+		$this->admin_screen->add_help_tab(
+			array(
+				'title'    => __('About Plugin', 'wp-github-gist'),
+				'id'       => 'about_tab',
+				'content'  => '<p>' . __("WP Github Gist WordPress Plugin, provides the ability to embed gist and files from Github in your blog posts or pages. Even though Github doesn't provide a way to embed files, this Plugin still works by using the gist-it service.", 'wp-github-gist') . '</p>',
+				'callback' => false
+			)
+		);
+ 
+        // Add help sidebar
+		$this->admin_screen->set_help_sidebar(
+            '<p><strong>' . __('More information', 'wp-github-gist') . '</strong></p>' .
+            '<p><a href = "http://sudarmuthu.com/wordpress/wp-github-gist">' . __('Plugin Homepage/support', 'wp-github-gist') . '</a></p>' .
+            '<p><a href = "http://sudarmuthu.com/blog">' . __("Plugin author's blog", 'wp-github-gist') . '</a></p>' .
+            '<p><a href = "http://sudarmuthu.com/wordpress/">' . __("Other Plugin's by Author", 'wp-github-gist') . '</a></p>'
+        );
+	}
 
     /**
      * add options
