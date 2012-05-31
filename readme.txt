@@ -3,8 +3,8 @@ Contributors: sudar
 Tags: github, gist, embed
 Requires at least: 2.8
 Donate Link: http://sudarmuthu.com/if-you-wanna-thank-me
-Tested up to: 3.2.2
-Stable tag: 0.2
+Tested up to: 3.3.2
+Stable tag: 0.3
 	
 Embed files and gist from Github in your blog posts or pages.
 
@@ -42,6 +42,10 @@ if you want to embed only part of the file, then you can specify the start and e
 
 [github file = "/sudar/MissileLauncher/blob/master/MissileLauncher.cpp" start_line = "10" end_line = "20"]
 
+### Changing Gist-it server
+
+By default, this Plugin uses my own [gist-it server][3] which is hosted on a free Google App Engine account. If you expect significant amount of traffic to your blog, then do consider using your own gist-it server. You can follow the [instructions to deploy your own gist-it server][4] and then go to the settings page to change the url.
+
 ### Translation
 
 The pot file is available with the Plugin. If you are willing to do translation for the Plugin, use the pot file to create the .po files for your language and let me know. I will add it to the Plugin after giving credit to you.
@@ -52,6 +56,8 @@ Support for the Plugin is available from the [Plugin's home page][1]. If you hav
 
  [1]: http://sudarmuthu.com/wordpress/wp-github-gist
  [2]: http://twitter.com/sudarmuthu
+ [3]: http://gist-it.sudarmuthu.com
+ [4]: http://sudarmuthu.com/wordpress/wp-github-gist/changing-gist-it-server
 
 == Installation ==
 
@@ -59,11 +65,16 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 
 == Changelog ==
 
-###v0.1 (2011-08-23)
+####v0.1 (2011-08-23)
 *   Initial Version
 
-###v0.2 (2012-05-02)
+####v0.2 (2012-05-02)
 *   Fixed issue in embedding Github files
+
+####v0.3 (2012-05-31) (Dev time: 2 hours)
+    * Added the ability to choose gist-it server
+    * Added information to the screen help tab                   
+    * Generated Pot file for translation
 
 ==Readme Generator== 
 

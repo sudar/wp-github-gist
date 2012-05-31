@@ -14,9 +14,10 @@ Text Domain: wp-github-gist
 2011-08-23 - v0.1 - Initial Release
 2012-05-02 - v0.2 - (Dev time: 0.5 hours)
                   - Fixed issue in embedding Github files
-2012-05-20 - v0.3 - (Dev time: 1.5 hours)
+2012-05-31 - v0.3 - (Dev time: 2 hours)
                   - Added the ability to choose gist-it server
                   - Added information to the screen help tab                   
+                  - Generated Pot file for translation
 
 Based on Github Gist Plugin http://wordpress.org/extend/plugins/github-gist by Jingwen Owen Ou
 Used the Gist-it script https://github.com/sudar/gist-it by Robert Krimen
