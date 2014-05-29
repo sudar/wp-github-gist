@@ -231,6 +231,7 @@ class WPGithubGist {
         extract(shortcode_atts(array(
             'id' => null,
             'file' => null,
+            'width' => '100%'
             ), $atts));
 
         if ($content != null && preg_match("/".self::REGEXP_GIST_URL."/", $content, $matches)) {
@@ -245,7 +246,9 @@ class WPGithubGist {
         $gist_html = $this->get_gist_embed_script($id, $file);
         $gist_raw = $this->get_gist_raw($id, $file);
 
-        return $gist_html . $gist_raw;
+	$wrap_html = '<div class="wrap_githubgist" style="width:'.$width.'">';
+	$wrap_html_end = '</div>';
+        return $wrap_html . $gist_html . $gist_raw . $wrap_html_end;
     }
 
     /**
@@ -259,14 +262,18 @@ class WPGithubGist {
         extract(shortcode_atts(array(
             'file' => null,
             'start_line' => 0,
-            'end_line' => 0
+            'end_line' => 0,
+            'width' => '100%'
             ), $atts));
 
         if ($file == null) {
             return "Error when github pages." . $content;
         }
 
-        return $this->get_github_embed_script($file, $start_line, $end_line);
+	$github_html = $this->get_github_embed_script($file, $start_line, $end_line);
+	$wrap_html = '<div class="wrap_githubgist" style="width:'.$width.'">';
+	$wrap_html_end = '</div>';
+        return $wrap_html . $github_html . $wrap_html_end;
     }
 
     /**
