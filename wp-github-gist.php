@@ -9,6 +9,7 @@ Donate Link: http://sudarmuthu.com/if-you-wanna-thank-me
 License: GPL
 Author URI: http://sudarmuthu.com/
 Text Domain: wp-github-gist
+Domain Path: languages/
 
 === RELEASE NOTES ===
 Check readme file for full release notes
