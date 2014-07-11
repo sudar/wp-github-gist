@@ -18,13 +18,15 @@ WP Github Gist WordPress Plugin, provides the ability to embed gist and files fr
 
 To embed a gist you have to use the following shortcode
 
-`[gist id = "{GIST_ID}" file = "{GIST_FILE}"]`
+`[gist id = "{GIST_ID}" file = "{GIST_FILE}" width = "{WIDTH}"]`
 
-Where `{GIST_ID}` is the id of your gist and `{GIST_FILE}` is the file inside gist that you want to display. If there is only one file in the gist, then you can ignore this.
+The following are the different attributes that you can use in the shortcode
 
-Example
+- `id` - Id of your gist.
+- `file` - File inside gist that you want to display. If there is only one file in the gist, then you can ignore this.
+- `width` - Width of the code wrapper. Default is `100%`.
 
-`[gist id = "12345" file = "myfile"]`
+eg: `[gist id = "12345" file = "myfile" width = "100%"]`
 
 #### Embed Github files
 
@@ -32,9 +34,9 @@ To embed a github file you have to use the following shortcode
 
 `[github file = "{GITHUB_FILE}" start_line = "{START_LINE}" end_line = "{END_LINE}"]`
 
-*   `{GITHUB_FILE}` - full path to your github file. eg: If you want to embed https://github.com/sudar/MissileLauncher/blob/master/MissileLauncher.cpp then `{GITHUB_FILE}` would be /sudar/MissileLauncher/blob/master/MissileLauncher.cpp
-*   `{START_LINE}` - If you want to embed only part of the file, then you can specify the starting line number (optional)
-*   `{END_LINE}` - If you want to embed only part of the file, then you can specify the ending line number (optional)
+- `{GITHUB_FILE}` - full path to your github file. eg: If you want to embed https://github.com/sudar/MissileLauncher/blob/master/MissileLauncher.cpp then `{GITHUB_FILE}` would be /sudar/MissileLauncher/blob/master/MissileLauncher.cpp
+- `{START_LINE}` - If you want to embed only part of the file, then you can specify the starting line number (optional)
+- `{END_LINE}` - If you want to embed only part of the file, then you can specify the ending line number (optional)
 
 eg: `[github file = "/sudar/MissileLauncher/blob/master/MissileLauncher.cpp"]`
 
