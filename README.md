@@ -5,7 +5,7 @@
 **Donate Link:** http://sudarmuthu.com/if-you-wanna-thank-me  
 **Tested up to:** 3.3.2  
 **Stable tag:** 0.3  
-	
+
 Embed files and gist from Github in your blog posts or pages.
 
 ## Description ##
@@ -62,19 +62,6 @@ Support for the Plugin is available from the [Plugin's home page][1]. If you hav
 ## Installation ##
 
 Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page.
-
-## Changelog ##
-
-####v0.1 (2011-08-23)
-*   Initial Version
-
-####v0.2 (2012-05-02)
-*   Fixed issue in embedding Github files
-
-####v0.3 (2012-05-31) (Dev time: 2 hours)
-    * Added the ability to choose gist-it server
-    * Added information to the screen help tab                   
-    * Generated Pot file for translation
 
 ## Readme Generator ##
 
