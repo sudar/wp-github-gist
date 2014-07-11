@@ -3,8 +3,8 @@
 **Tags:** github, gist, embed  
 **Requires at least:** 2.8  
 **Donate Link:** http://sudarmuthu.com/if-you-wanna-thank-me  
-**Tested up to:** 3.3.2  
-**Stable tag:** 0.3  
+**Tested up to:** 3.9.1  
+**Stable tag:** 0.4  
 
 Embed files and gist from Github in your blog posts or pages.
 
