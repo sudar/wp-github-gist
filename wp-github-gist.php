@@ -362,14 +362,8 @@ class WPGithubGist {
 
         return $content;
     }
-
-    // PHP4 compatibility
-    function WPGithubGist() {
-        $this->__construct();
-    }
 }
 
 // Start this plugin once all other plugins are fully loaded
 add_action( 'init', 'WPGithubGist' ); function WPGithubGist() { global $WPGithubGist; $WPGithubGist = new WPGithubGist(); }
-
 ?>
