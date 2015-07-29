@@ -270,7 +270,8 @@ class WPGithubGist {
             'file' => null,
             'start_line' => 0,
             'end_line' => 0,
-            'width' => '100%'
+            'width' => '100%',
+            'height' => '100%'
             ), $atts));
 
         if ($file == null) {
@@ -278,7 +279,8 @@ class WPGithubGist {
         }
 
         $github_html = $this->get_github_embed_script($file, $start_line, $end_line);
-        $wrap_html = '<div class="wrap_githubgist" style="width:'.$width.'">';
+        $wrap_html = '<style> #wrap_githubgist' . md5($file) . ' .gist-data {max-height: ' . $height . ';} </style>';
+        $wrap_html .= '<div id="wrap_githubgist' . md5($file) . '" style="width:'.$width.'">';
         $wrap_html_end = '</div>';
 
         return $wrap_html . $github_html . $wrap_html_end;
