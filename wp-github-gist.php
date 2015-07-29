@@ -227,7 +227,8 @@ class WPGithubGist {
             'id'    => null,
             'user'  => null,
             'file'  => null,
-            'width' => '100%'
+            'width' => '100%',
+            'height' => '100%'
             ), $atts));
 
         $user  = apply_filters( 'wp-github-gist-user', $user, $id );
@@ -236,6 +237,7 @@ class WPGithubGist {
         $user  = trim( $user );
         $file  = trim( $file );
         $width = trim( $width );
+        $height = trim( $height );
 
         if ($content != null && preg_match("/".self::REGEXP_GIST_URL."/", $content, $matches)) {
             $id = $matches[1];
@@ -248,8 +250,9 @@ class WPGithubGist {
 
         $gist_html     = $this->get_gist_embed_script( $id, $user, $file );
         $gist_raw      = $this->get_gist_raw( $id, $user, $file );
-
-        $wrap_html     = '<div class="wrap_githubgist" style="width:' . $width . '">';
+        
+        $wrap_html     = '<style> #wrap_githubgist' . $id . ' .gist-data {max-height: ' . $height . ';} </style>';
+        $wrap_html     .= '<div id="wrap_githubgist' . $id . '" style="width:' . $width . '">';
         $wrap_html_end = '</div>';
 
         return $wrap_html . $gist_html . $gist_raw . $wrap_html_end;
