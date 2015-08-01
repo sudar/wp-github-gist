@@ -1,5 +1,8 @@
 ## Changelog ##
 
+### 0.5 (2015-08-01) (Dev time: 1 hours) ###
+- New: Add 'height' parameter to specify the height of gist and github embeds
+
 ### 0.4 (2014-07-11) (Dev time: 3 hours) ###
 
 - Fix: Handle changes in github gist embed code
@@ -20,6 +23,9 @@
 
 
 ## Upgrade Notice ##
+
+### 0.5 ###
+Added the ability to specify the height for gists and github embeds
 
 ### 0.4 ###
 Handle changes in github gist embed code

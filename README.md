@@ -3,8 +3,8 @@
 **Tags:** github, gist, embed  
 **Requires at least:** 2.8  
 **Donate Link:** http://sudarmuthu.com/if-you-wanna-thank-me  
-**Tested up to:** 3.9.1  
-**Stable tag:** 0.4  
+**Tested up to:** 4.2.3  
+**Stable tag:** 0.5  
 
 Embed files and gist from Github in your blog posts or pages.
 
@@ -18,15 +18,16 @@ WP Github Gist WordPress Plugin, provides the ability to embed gist and files fr
 
 To embed a gist you have to use the following shortcode
 
-`[gist id = "{GIST_ID}" file = "{GIST_FILE}" width = "{WIDTH}"]`
+`[gist id = "{GIST_ID}" file = "{GIST_FILE}" width = "{WIDTH}" height = "{HEIGHT}"]`
 
 The following are the different attributes that you can use in the shortcode
 
 - `id` - Id of your gist.
 - `file` - File inside gist that you want to display. If there is only one file in the gist, then you can ignore this.
 - `width` - Width of the code wrapper. Default is `100%`.
+- `height` - Height of the code wrapper. Default is `100%`.
 
-eg: `[gist id = "12345" file = "myfile" width = "100%"]`
+eg: `[gist id = "12345" file = "myfile" width = "100%" height = "100%"]`
 
 #### Embed Github files
 

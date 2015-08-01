@@ -4,7 +4,7 @@ Plugin Name: WP Github Gist
 Plugin URI: http://sudarmuthu.com/wordpress/wp-github-gist
 Description: Embed files and gist from Github in your blog posts or pages.
 Author: Sudar
-Version: 0.4
+Version: 0.5
 Donate Link: http://sudarmuthu.com/if-you-wanna-thank-me
 License: GPL
 Author URI: http://sudarmuthu.com/
